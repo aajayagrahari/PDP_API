@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerDesignProAPI", "PowerDesignProAPI\PowerDesignProAPI.csproj", "{AA734E43-B5BA-402A-BFF3-D704B168EC2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerDesignPro.Test", "PowerDesignPro.Test\PowerDesignPro.Test.csproj", "{F4693889-D888-4AD3-948D-FE566C91386C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerDesignPro.Data", "PowerDesignPro.Data\PowerDesignPro.Data.csproj", "{64566CC7-2AA3-4874-9D68-7DB84C5D5A5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerDesignPro.BusinessProcessors", "PowerDesignPro.BusinessProcessors\PowerDesignPro.BusinessProcessors.csproj", "{9216BB06-35E6-4A32-9224-535B00E5C6CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerDesignPro.Common", "PowerDesignPro.Common\PowerDesignPro.Common.csproj", "{626C80D6-CBE1-4439-86C7-E70DC9F8BB74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		QA|Any CPU = QA|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA734E43-B5BA-402A-BFF3-D704B168EC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA734E43-B5BA-402A-BFF3-D704B168EC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA734E43-B5BA-402A-BFF3-D704B168EC2D}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{AA734E43-B5BA-402A-BFF3-D704B168EC2D}.QA|Any CPU.Build.0 = QA|Any CPU
+		{AA734E43-B5BA-402A-BFF3-D704B168EC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA734E43-B5BA-402A-BFF3-D704B168EC2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4693889-D888-4AD3-948D-FE566C91386C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4693889-D888-4AD3-948D-FE566C91386C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4693889-D888-4AD3-948D-FE566C91386C}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{F4693889-D888-4AD3-948D-FE566C91386C}.QA|Any CPU.Build.0 = QA|Any CPU
+		{F4693889-D888-4AD3-948D-FE566C91386C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4693889-D888-4AD3-948D-FE566C91386C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64566CC7-2AA3-4874-9D68-7DB84C5D5A5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64566CC7-2AA3-4874-9D68-7DB84C5D5A5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64566CC7-2AA3-4874-9D68-7DB84C5D5A5D}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{64566CC7-2AA3-4874-9D68-7DB84C5D5A5D}.QA|Any CPU.Build.0 = QA|Any CPU
+		{64566CC7-2AA3-4874-9D68-7DB84C5D5A5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64566CC7-2AA3-4874-9D68-7DB84C5D5A5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9216BB06-35E6-4A32-9224-535B00E5C6CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9216BB06-35E6-4A32-9224-535B00E5C6CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9216BB06-35E6-4A32-9224-535B00E5C6CE}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{9216BB06-35E6-4A32-9224-535B00E5C6CE}.QA|Any CPU.Build.0 = QA|Any CPU
+		{9216BB06-35E6-4A32-9224-535B00E5C6CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9216BB06-35E6-4A32-9224-535B00E5C6CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{626C80D6-CBE1-4439-86C7-E70DC9F8BB74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{626C80D6-CBE1-4439-86C7-E70DC9F8BB74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{626C80D6-CBE1-4439-86C7-E70DC9F8BB74}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{626C80D6-CBE1-4439-86C7-E70DC9F8BB74}.QA|Any CPU.Build.0 = Release|Any CPU
+		{626C80D6-CBE1-4439-86C7-E70DC9F8BB74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{626C80D6-CBE1-4439-86C7-E70DC9F8BB74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7EB13681-3F0D-4373-BA23-6FB04535EDC7}
+	EndGlobalSection
+EndGlobal

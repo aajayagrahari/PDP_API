@@ -1,0 +1,1238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{64566CC7-2AA3-4874-9D68-7DB84C5D5A5D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PowerDesignPro.Data</RootNamespace>
+    <AssemblyName>PowerDesignPro.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <OutputPath>bin\QA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Framework\Annotations\Precision.cs" />
+    <Compile Include="Framework\DbFactory\DbFactory.cs" />
+    <Compile Include="Framework\DbFactory\Disposable.cs" />
+    <Compile Include="Framework\EntityConfigurationMap\ACLoadMap.cs" />
+    <Compile Include="Framework\EntityConfigurationMap\BasicLoadMap.cs" />
+    <Compile Include="Framework\EntityConfigurationMap\ExhaustPipingSolutionMap.cs" />
+    <Compile Include="Framework\EntityConfigurationMap\GasPipingSolutionMap.cs" />
+    <Compile Include="Framework\EntityConfigurationMap\LoadDefaultsMap.cs" />
+    <Compile Include="Framework\EntityConfigurationMap\MotorCalculationMap.cs" />
+    <Compile Include="Framework\EntityConfigurationMap\SolutionMap.cs" />
+    <Compile Include="Framework\EntityConfigurationMap\UPSLoadMap.cs" />
+    <Compile Include="Framework\EntityConfigurationMap\UserDefaultSolutionSetupMap.cs" />
+    <Compile Include="Framework\EntityConfigurationMap\ProjectMap.cs" />
+    <Compile Include="Framework\EntityConfigurationMap\SolutionSetupMap.cs" />
+    <Compile Include="Framework\EntityConfigurationMap\VoltageMap.cs" />
+    <Compile Include="Framework\Interface\IAuthRepository.cs" />
+    <Compile Include="Framework\Interface\IDbFactory.cs" />
+    <Compile Include="Framework\Interface\IEntityBaseRepository.cs" />
+    <Compile Include="Framework\Repository\AuthRepository.cs" />
+    <Compile Include="Framework\Repository\EntityBaseRepository.cs" />
+    <Compile Include="Migrations\201710182100382_AddedContactDetailsToProjectEntity.cs" />
+    <Compile Include="Migrations\201710182100382_AddedContactDetailsToProjectEntity.Designer.cs">
+      <DependentUpon>201710182100382_AddedContactDetailsToProjectEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710240313244_AddedPickListEntities.cs" />
+    <Compile Include="Migrations\201710240313244_AddedPickListEntities.Designer.cs">
+      <DependentUpon>201710240313244_AddedPickListEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710242123491_ModifiedPickListEntities.cs" />
+    <Compile Include="Migrations\201710242123491_ModifiedPickListEntities.Designer.cs">
+      <DependentUpon>201710242123491_ModifiedPickListEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710250908361_DefaultSolutionSetup.cs" />
+    <Compile Include="Migrations\201710250908361_DefaultSolutionSetup.Designer.cs">
+      <DependentUpon>201710250908361_DefaultSolutionSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710260111219_AddedSolutionEntity.cs" />
+    <Compile Include="Migrations\201710260111219_AddedSolutionEntity.Designer.cs">
+      <DependentUpon>201710260111219_AddedSolutionEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710260222300_201710260111219_AddedSolutionEntity.cs" />
+    <Compile Include="Migrations\201710260222300_201710260111219_AddedSolutionEntity.Designer.cs">
+      <DependentUpon>201710260222300_201710260111219_AddedSolutionEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710260245160_ModifiedSolutionSetupEntity.cs" />
+    <Compile Include="Migrations\201710260245160_ModifiedSolutionSetupEntity.Designer.cs">
+      <DependentUpon>201710260245160_ModifiedSolutionSetupEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710261420194_SolutionChanges.cs" />
+    <Compile Include="Migrations\201710261420194_SolutionChanges.Designer.cs">
+      <DependentUpon>201710261420194_SolutionChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710261918123_ModifiedVoltageDipFrequencyDipEntity.cs" />
+    <Compile Include="Migrations\201710261918123_ModifiedVoltageDipFrequencyDipEntity.Designer.cs">
+      <DependentUpon>201710261918123_ModifiedVoltageDipFrequencyDipEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710262108393_ModifiedVoltageSpecificEntity.cs" />
+    <Compile Include="Migrations\201710262108393_ModifiedVoltageSpecificEntity.Designer.cs">
+      <DependentUpon>201710262108393_ModifiedVoltageSpecificEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710270021075_ModifiedSolutionSetupEntityForLoadSequenceCyclic.cs" />
+    <Compile Include="Migrations\201710270021075_ModifiedSolutionSetupEntityForLoadSequenceCyclic.Designer.cs">
+      <DependentUpon>201710270021075_ModifiedSolutionSetupEntityForLoadSequenceCyclic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710270156313_MadeUserIDOptionalForUserDefaultSetup.cs" />
+    <Compile Include="Migrations\201710270156313_MadeUserIDOptionalForUserDefaultSetup.Designer.cs">
+      <DependentUpon>201710270156313_MadeUserIDOptionalForUserDefaultSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710271229496_solutionSetupUpdate.cs" />
+    <Compile Include="Migrations\201710271229496_solutionSetupUpdate.Designer.cs">
+      <DependentUpon>201710271229496_solutionSetupUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710271605025_AddNameFieldToSolutionEntity.cs" />
+    <Compile Include="Migrations\201710271605025_AddNameFieldToSolutionEntity.Designer.cs">
+      <DependentUpon>201710271605025_AddNameFieldToSolutionEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710301618020_AddCreatedModifiedDateTimeForSolution.cs" />
+    <Compile Include="Migrations\201710301618020_AddCreatedModifiedDateTimeForSolution.Designer.cs">
+      <DependentUpon>201710301618020_AddCreatedModifiedDateTimeForSolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711011513210_AddedActiveColumnForSolution.cs" />
+    <Compile Include="Migrations\201711011513210_AddedActiveColumnForSolution.Designer.cs">
+      <DependentUpon>201711011513210_AddedActiveColumnForSolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711031010097_AddedCreatedByAndModifiedByForSolution.cs" />
+    <Compile Include="Migrations\201711031010097_AddedCreatedByAndModifiedByForSolution.Designer.cs">
+      <DependentUpon>201711031010097_AddedCreatedByAndModifiedByForSolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711070907055_AddedCreatedByAndModifiedByAndBothDatetimeForSolutionSetup.cs" />
+    <Compile Include="Migrations\201711070907055_AddedCreatedByAndModifiedByAndBothDatetimeForSolutionSetup.Designer.cs">
+      <DependentUpon>201711070907055_AddedCreatedByAndModifiedByAndBothDatetimeForSolutionSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711071351187_FuelTypeDependentsChanges.cs" />
+    <Compile Include="Migrations\201711071351187_FuelTypeDependentsChanges.Designer.cs">
+      <DependentUpon>201711071351187_FuelTypeDependentsChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711071439159_FuelTankAndRunTimeChanges.cs" />
+    <Compile Include="Migrations\201711071439159_FuelTankAndRunTimeChanges.Designer.cs">
+      <DependentUpon>201711071439159_FuelTankAndRunTimeChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711072000332_ModifiedFuelTank_DesiredRunTimeFields.cs" />
+    <Compile Include="Migrations\201711072000332_ModifiedFuelTank_DesiredRunTimeFields.Designer.cs">
+      <DependentUpon>201711072000332_ModifiedFuelTank_DesiredRunTimeFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711080206048_AddedDefaultSelectedFieldToSomePickListEntities.cs" />
+    <Compile Include="Migrations\201711080206048_AddedDefaultSelectedFieldToSomePickListEntities.Designer.cs">
+      <DependentUpon>201711080206048_AddedDefaultSelectedFieldToSomePickListEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711090536253_AddOrdinalFieldToPickList.cs" />
+    <Compile Include="Migrations\201711090536253_AddOrdinalFieldToPickList.Designer.cs">
+      <DependentUpon>201711090536253_AddOrdinalFieldToPickList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711101050491_AddedFirstnameLastnameAddressPhoneCompanyForUser.cs" />
+    <Compile Include="Migrations\201711101050491_AddedFirstnameLastnameAddressPhoneCompanyForUser.Designer.cs">
+      <DependentUpon>201711101050491_AddedFirstnameLastnameAddressPhoneCompanyForUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711101650186_AddTraceMessageEntity.cs" />
+    <Compile Include="Migrations\201711101650186_AddTraceMessageEntity.Designer.cs">
+      <DependentUpon>201711101650186_AddTraceMessageEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711130928251_AddedRegulatoryFilterEntity.cs" />
+    <Compile Include="Migrations\201711130928251_AddedRegulatoryFilterEntity.Designer.cs">
+      <DependentUpon>201711130928251_AddedRegulatoryFilterEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711131118533_AddedMoreFieldForuserEntity.cs" />
+    <Compile Include="Migrations\201711131118533_AddedMoreFieldForuserEntity.Designer.cs">
+      <DependentUpon>201711131118533_AddedMoreFieldForuserEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711151120105_AddedMoreFieldToUserEntity.cs" />
+    <Compile Include="Migrations\201711151120105_AddedMoreFieldToUserEntity.Designer.cs">
+      <DependentUpon>201711151120105_AddedMoreFieldToUserEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711151402273_AddedMoreFieldToBaseLoad.cs" />
+    <Compile Include="Migrations\201711151402273_AddedMoreFieldToBaseLoad.Designer.cs">
+      <DependentUpon>201711151402273_AddedMoreFieldToBaseLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711161215390_AddedMoreFieldToUserEntityAndChangeBasicLoad.cs" />
+    <Compile Include="Migrations\201711161215390_AddedMoreFieldToUserEntityAndChangeBasicLoad.Designer.cs">
+      <DependentUpon>201711161215390_AddedMoreFieldToUserEntityAndChangeBasicLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711161228232_AddedMoreFieldToUserEntityNonNullable.cs" />
+    <Compile Include="Migrations\201711161228232_AddedMoreFieldToUserEntityNonNullable.Designer.cs">
+      <DependentUpon>201711161228232_AddedMoreFieldToUserEntityNonNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711170459006_AddEntitiesForBasicLoadType.cs" />
+    <Compile Include="Migrations\201711170459006_AddEntitiesForBasicLoadType.Designer.cs">
+      <DependentUpon>201711170459006_AddEntitiesForBasicLoadType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711170505488_ModifiedForeignKeyInStateTable.cs" />
+    <Compile Include="Migrations\201711170505488_ModifiedForeignKeyInStateTable.Designer.cs">
+      <DependentUpon>201711170505488_ModifiedForeignKeyInStateTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711171533371_AddedMoreFieldToBasicLoadEntity.cs" />
+    <Compile Include="Migrations\201711171533371_AddedMoreFieldToBasicLoadEntity.Designer.cs">
+      <DependentUpon>201711171533371_AddedMoreFieldToBasicLoadEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711171615113_AddedLoadEntity.cs" />
+    <Compile Include="Migrations\201711171615113_AddedLoadEntity.Designer.cs">
+      <DependentUpon>201711171615113_AddedLoadEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711172241326_AddDefaultSelectionToLoadEntity.cs" />
+    <Compile Include="Migrations\201711172241326_AddDefaultSelectionToLoadEntity.Designer.cs">
+      <DependentUpon>201711172241326_AddDefaultSelectionToLoadEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711201227215_ModifiedBasicLoadTable.cs" />
+    <Compile Include="Migrations\201711201227215_ModifiedBasicLoadTable.Designer.cs">
+      <DependentUpon>201711201227215_ModifiedBasicLoadTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711201523427_AddedSomeMoreFieldToBaseSolutionLoadEntity.cs" />
+    <Compile Include="Migrations\201711201523427_AddedSomeMoreFieldToBaseSolutionLoadEntity.Designer.cs">
+      <DependentUpon>201711201523427_AddedSomeMoreFieldToBaseSolutionLoadEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711201629247_AddSolutionNavigationToBasicLoadEntity_DateTimeFieldsToLoadDefaults.cs" />
+    <Compile Include="Migrations\201711201629247_AddSolutionNavigationToBasicLoadEntity_DateTimeFieldsToLoadDefaults.Designer.cs">
+      <DependentUpon>201711201629247_AddSolutionNavigationToBasicLoadEntity_DateTimeFieldsToLoadDefaults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711201741071_AddStartingLoadIDToLoadDefaults.cs" />
+    <Compile Include="Migrations\201711201741071_AddStartingLoadIDToLoadDefaults.Designer.cs">
+      <DependentUpon>201711201741071_AddStartingLoadIDToLoadDefaults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711211940286_ModifySizeRunningNullableInBasicLoad.cs" />
+    <Compile Include="Migrations\201711211940286_ModifySizeRunningNullableInBasicLoad.Designer.cs">
+      <DependentUpon>201711211940286_ModifySizeRunningNullableInBasicLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711220305135_ModifyVoltagePhaseIDNullableInBasicLoad.cs" />
+    <Compile Include="Migrations\201711220305135_ModifyVoltagePhaseIDNullableInBasicLoad.Designer.cs">
+      <DependentUpon>201711220305135_ModifyVoltagePhaseIDNullableInBasicLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711240808472_ModifiedBasicLoadEntity.cs" />
+    <Compile Include="Migrations\201711240808472_ModifiedBasicLoadEntity.Designer.cs">
+      <DependentUpon>201711240808472_ModifiedBasicLoadEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711241450197_AddedMoreLoadEntitie.cs" />
+    <Compile Include="Migrations\201711241450197_AddedMoreLoadEntitie.Designer.cs">
+      <DependentUpon>201711241450197_AddedMoreLoadEntitie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711271420234_AddedMoreLoadsEntity.cs" />
+    <Compile Include="Migrations\201711271420234_AddedMoreLoadsEntity.Designer.cs">
+      <DependentUpon>201711271420234_AddedMoreLoadsEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711271428382_AddedMoreLoadsTypeEntity.cs" />
+    <Compile Include="Migrations\201711271428382_AddedMoreLoadsTypeEntity.Designer.cs">
+      <DependentUpon>201711271428382_AddedMoreLoadsTypeEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711281214273_AddedDateFieldApplicationUser.cs" />
+    <Compile Include="Migrations\201711281214273_AddedDateFieldApplicationUser.Designer.cs">
+      <DependentUpon>201711281214273_AddedDateFieldApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711282114430_ModifiedStateCountryIDNUllable.cs" />
+    <Compile Include="Migrations\201711282114430_ModifiedStateCountryIDNUllable.Designer.cs">
+      <DependentUpon>201711282114430_ModifiedStateCountryIDNUllable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711291224226_UpdatedLoadEntities.cs" />
+    <Compile Include="Migrations\201711291224226_UpdatedLoadEntities.Designer.cs">
+      <DependentUpon>201711291224226_UpdatedLoadEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711291302048_UpdatedLoadEntitiesBaseSolution.cs" />
+    <Compile Include="Migrations\201711291302048_UpdatedLoadEntitiesBaseSolution.Designer.cs">
+      <DependentUpon>201711291302048_UpdatedLoadEntitiesBaseSolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711291406556_AddedMoreEntityForSolutionSummary.cs" />
+    <Compile Include="Migrations\201711291406556_AddedMoreEntityForSolutionSummary.Designer.cs">
+      <DependentUpon>201711291406556_AddedMoreEntityForSolutionSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712011235108_AddedEntityToBaseSolutionLoadEntity.cs" />
+    <Compile Include="Migrations\201712011235108_AddedEntityToBaseSolutionLoadEntity.Designer.cs">
+      <DependentUpon>201712011235108_AddedEntityToBaseSolutionLoadEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712042048434_AddedVoltageNominalSpecificAndPhaseToBaseSolutionLoadEntity.cs" />
+    <Compile Include="Migrations\201712042048434_AddedVoltageNominalSpecificAndPhaseToBaseSolutionLoadEntity.Designer.cs">
+      <DependentUpon>201712042048434_AddedVoltageNominalSpecificAndPhaseToBaseSolutionLoadEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712042107363_RemovedVoltageNominalSpecificAndPhaseFromMotorUPSLightingEntity.cs" />
+    <Compile Include="Migrations\201712042107363_RemovedVoltageNominalSpecificAndPhaseFromMotorUPSLightingEntity.Designer.cs">
+      <DependentUpon>201712042107363_RemovedVoltageNominalSpecificAndPhaseFromMotorUPSLightingEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712052022027_UseSizeUnitsTableForACLoads.cs" />
+    <Compile Include="Migrations\201712052022027_UseSizeUnitsTableForACLoads.Designer.cs">
+      <DependentUpon>201712052022027_UseSizeUnitsTableForACLoads.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712052109286_UseSizeUnitsTableForACLoads_2.cs" />
+    <Compile Include="Migrations\201712052109286_UseSizeUnitsTableForACLoads_2.Designer.cs">
+      <DependentUpon>201712052109286_UseSizeUnitsTableForACLoads_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712052132478_UseSizeUnitsTableForACLoads_3.cs" />
+    <Compile Include="Migrations\201712052132478_UseSizeUnitsTableForACLoads_3.Designer.cs">
+      <DependentUpon>201712052132478_UseSizeUnitsTableForACLoads_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712052317140_AddedModiifedSolutionSummaryEntities.cs" />
+    <Compile Include="Migrations\201712052317140_AddedModiifedSolutionSummaryEntities.Designer.cs">
+      <DependentUpon>201712052317140_AddedModiifedSolutionSummaryEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712061749441_AddColumnsToAlternatorTable.cs" />
+    <Compile Include="Migrations\201712061749441_AddColumnsToAlternatorTable.Designer.cs">
+      <DependentUpon>201712061749441_AddColumnsToAlternatorTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712061954224_AddColumnsToGeneratorAndDocumentationTable.cs" />
+    <Compile Include="Migrations\201712061954224_AddColumnsToGeneratorAndDocumentationTable.Designer.cs">
+      <DependentUpon>201712061954224_AddColumnsToGeneratorAndDocumentationTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712071252404_UpdatedBaseSolutionEntityForHArmonicAndShedField.cs" />
+    <Compile Include="Migrations\201712071252404_UpdatedBaseSolutionEntityForHArmonicAndShedField.Designer.cs">
+      <DependentUpon>201712071252404_UpdatedBaseSolutionEntityForHArmonicAndShedField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712081603221_AddedLoadSequenceEntity.cs" />
+    <Compile Include="Migrations\201712081603221_AddedLoadSequenceEntity.Designer.cs">
+      <DependentUpon>201712081603221_AddedLoadSequenceEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712111336067_MissedDbChanges.cs" />
+    <Compile Include="Migrations\201712111336067_MissedDbChanges.Designer.cs">
+      <DependentUpon>201712111336067_MissedDbChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712121709052_AddForeignKeysToLightingType.cs" />
+    <Compile Include="Migrations\201712121709052_AddForeignKeysToLightingType.Designer.cs">
+      <DependentUpon>201712121709052_AddForeignKeysToLightingType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712121731399_AddHarmonicContentIDToLightingType.cs" />
+    <Compile Include="Migrations\201712121731399_AddHarmonicContentIDToLightingType.Designer.cs">
+      <DependentUpon>201712121731399_AddHarmonicContentIDToLightingType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712122016126_ModifyPropertiesNullableLightingLoad.cs" />
+    <Compile Include="Migrations\201712122016126_ModifyPropertiesNullableLightingLoad.Designer.cs">
+      <DependentUpon>201712122016126_ModifyPropertiesNullableLightingLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712122120000_AddHarmonicDeviceTypeToWelderType.cs" />
+    <Compile Include="Migrations\201712122120000_AddHarmonicDeviceTypeToWelderType.Designer.cs">
+      <DependentUpon>201712122120000_AddHarmonicDeviceTypeToWelderType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712141353039_CreatFieldNullableinUPSEntity.cs" />
+    <Compile Include="Migrations\201712141353039_CreatFieldNullableinUPSEntity.Designer.cs">
+      <DependentUpon>201712141353039_CreatFieldNullableinUPSEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712141406063_addedtwomorefieldinUPSLoad.cs" />
+    <Compile Include="Migrations\201712141406063_addedtwomorefieldinUPSLoad.Designer.cs">
+      <DependentUpon>201712141406063_addedtwomorefieldinUPSLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712141412081_addedonemorefieldnullableinupsload.cs" />
+    <Compile Include="Migrations\201712141412081_addedonemorefieldnullableinupsload.Designer.cs">
+      <DependentUpon>201712141412081_addedonemorefieldnullableinupsload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712150838333_MissingMigration.cs" />
+    <Compile Include="Migrations\201712150838333_MissingMigration.Designer.cs">
+      <DependentUpon>201712150838333_MissingMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712150924119_ModifiedUPSLoad.cs" />
+    <Compile Include="Migrations\201712150924119_ModifiedUPSLoad.Designer.cs">
+      <DependentUpon>201712150924119_ModifiedUPSLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712151334511_ModifiedUPSTypeEntitywithnullable.cs" />
+    <Compile Include="Migrations\201712151334511_ModifiedUPSTypeEntitywithnullable.Designer.cs">
+      <DependentUpon>201712151334511_ModifiedUPSTypeEntitywithnullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712151338312_ModifiedUPSTypeEntitywithoutnullable.cs" />
+    <Compile Include="Migrations\201712151338312_ModifiedUPSTypeEntitywithoutnullable.Designer.cs">
+      <DependentUpon>201712151338312_ModifiedUPSTypeEntitywithoutnullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712142004513_ModiifedAlternatorEntity.cs" />
+    <Compile Include="Migrations\201712142004513_ModiifedAlternatorEntity.Designer.cs">
+      <DependentUpon>201712142004513_ModiifedAlternatorEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712142032140_ModiifedGeneratorEntity_AddedGeneratorAvailableVoltagesAlternators.cs" />
+    <Compile Include="Migrations\201712142032140_ModiifedGeneratorEntity_AddedGeneratorAvailableVoltagesAlternators.Designer.cs">
+      <DependentUpon>201712142032140_ModiifedGeneratorEntity_AddedGeneratorAvailableVoltagesAlternators.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712142045312_DateTimeFieldsToGeneratorAvailableTables.cs" />
+    <Compile Include="Migrations\201712142045312_DateTimeFieldsToGeneratorAvailableTables.Designer.cs">
+      <DependentUpon>201712142045312_DateTimeFieldsToGeneratorAvailableTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712152251126_merge.cs" />
+    <Compile Include="Migrations\201712152251126_merge.Designer.cs">
+      <DependentUpon>201712152251126_merge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712190211197_Remover50HzColumnsFromGenset.cs" />
+    <Compile Include="Migrations\201712190211197_Remover50HzColumnsFromGenset.Designer.cs">
+      <DependentUpon>201712190211197_Remover50HzColumnsFromGenset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712200506386_merge1.cs" />
+    <Compile Include="Migrations\201712200506386_merge1.Designer.cs">
+      <DependentUpon>201712200506386_merge1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712221616071_AddedUPSRevertBatteryFieldToLoadDefaults.cs" />
+    <Compile Include="Migrations\201712221616071_AddedUPSRevertBatteryFieldToLoadDefaults.Designer.cs">
+      <DependentUpon>201712221616071_AddedUPSRevertBatteryFieldToLoadDefaults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712221631170_ModifiedUPSRevertToBatteryNonNullable.cs" />
+    <Compile Include="Migrations\201712221631170_ModifiedUPSRevertToBatteryNonNullable.Designer.cs">
+      <DependentUpon>201712221631170_ModifiedUPSRevertToBatteryNonNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712271423176_UpdatedGeneratorAvailVoltage.cs" />
+    <Compile Include="Migrations\201712271423176_UpdatedGeneratorAvailVoltage.Designer.cs">
+      <DependentUpon>201712271423176_UpdatedGeneratorAvailVoltage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712272209414_MadeGeneratorIDAlternatorIDNullableInRecommendedProduct.cs" />
+    <Compile Include="Migrations\201712272209414_MadeGeneratorIDAlternatorIDNullableInRecommendedProduct.Designer.cs">
+      <DependentUpon>201712272209414_MadeGeneratorIDAlternatorIDNullableInRecommendedProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712272258475_RemoveCostPerKWFromGenerator.cs" />
+    <Compile Include="Migrations\201712272258475_RemoveCostPerKWFromGenerator.Designer.cs">
+      <DependentUpon>201712272258475_RemoveCostPerKWFromGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712280143431_AddGeneratorRegulatorFilterEntity.cs" />
+    <Compile Include="Migrations\201712280143431_AddGeneratorRegulatorFilterEntity.Designer.cs">
+      <DependentUpon>201712280143431_AddGeneratorRegulatorFilterEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712280817598_UpdateGeneratorRegulatoryFilter.cs" />
+    <Compile Include="Migrations\201712280817598_UpdateGeneratorRegulatoryFilter.Designer.cs">
+      <DependentUpon>201712280817598_UpdateGeneratorRegulatoryFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712282018367_ModifiedEntitiesForMPSLogic.cs" />
+    <Compile Include="Migrations\201712282018367_ModifiedEntitiesForMPSLogic.Designer.cs">
+      <DependentUpon>201712282018367_ModifiedEntitiesForMPSLogic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801031742438_AddedParallelQuantityRemovedModuleSize.cs" />
+    <Compile Include="Migrations\201801031742438_AddedParallelQuantityRemovedModuleSize.Designer.cs">
+      <DependentUpon>201801031742438_AddedParallelQuantityRemovedModuleSize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801051127577_ModifedGeneratorAvailableAlternator.cs" />
+    <Compile Include="Migrations\201801051127577_ModifedGeneratorAvailableAlternator.Designer.cs">
+      <DependentUpon>201801051127577_ModifedGeneratorAvailableAlternator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801091543083_AddedSomeMoreFieldinGensetAlnernaterandFamilies.cs" />
+    <Compile Include="Migrations\201801091543083_AddedSomeMoreFieldinGensetAlnernaterandFamilies.Designer.cs">
+      <DependentUpon>201801091543083_AddedSomeMoreFieldinGensetAlnernaterandFamilies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801111956361_AddBrandIDToProductFamily.cs" />
+    <Compile Include="Migrations\201801111956361_AddBrandIDToProductFamily.Designer.cs">
+      <DependentUpon>201801111956361_AddBrandIDToProductFamily.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801111958022_AddBrandIDNonNullableToProductFamily.cs" />
+    <Compile Include="Migrations\201801111958022_AddBrandIDNonNullableToProductFamily.Designer.cs">
+      <DependentUpon>201801111958022_AddBrandIDNonNullableToProductFamily.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801112153170_ModifyProductFamilyIDNullable.cs" />
+    <Compile Include="Migrations\201801112153170_ModifyProductFamilyIDNullable.Designer.cs">
+      <DependentUpon>201801112153170_ModifyProductFamilyIDNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801121226323_AddedActivefieldinLoadDefault.cs" />
+    <Compile Include="Migrations\201801121226323_AddedActivefieldinLoadDefault.Designer.cs">
+      <DependentUpon>201801121226323_AddedActivefieldinLoadDefault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801121243364_AddedonemoreactivefiledinLoad.cs" />
+    <Compile Include="Migrations\201801121243364_AddedonemoreactivefiledinLoad.Designer.cs">
+      <DependentUpon>201801121243364_AddedonemoreactivefiledinLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801161217294_AddedMoreoneEntityMaintainMarketVertical.cs" />
+    <Compile Include="Migrations\201801161217294_AddedMoreoneEntityMaintainMarketVertical.Designer.cs">
+      <DependentUpon>201801161217294_AddedMoreoneEntityMaintainMarketVertical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801161326586_GasPipeChanges.cs" />
+    <Compile Include="Migrations\201801161326586_GasPipeChanges.Designer.cs">
+      <DependentUpon>201801161326586_GasPipeChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801162049249_DeleteMarketVerticalTable.cs" />
+    <Compile Include="Migrations\201801162049249_DeleteMarketVerticalTable.Designer.cs">
+      <DependentUpon>201801162049249_DeleteMarketVerticalTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801162054547_RemoveColumnFromsolutionApplication.cs" />
+    <Compile Include="Migrations\201801162054547_RemoveColumnFromsolutionApplication.Designer.cs">
+      <DependentUpon>201801162054547_RemoveColumnFromsolutionApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801181422434_GasPipeSolutionUpdated.cs" />
+    <Compile Include="Migrations\201801181422434_GasPipeSolutionUpdated.Designer.cs">
+      <DependentUpon>201801181422434_GasPipeSolutionUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801181712581_RemoveBrandIDFromApplicationUser.cs" />
+    <Compile Include="Migrations\201801181712581_RemoveBrandIDFromApplicationUser.Designer.cs">
+      <DependentUpon>201801181712581_RemoveBrandIDFromApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801181714053_RemoveBrandIDFromApplicationUserTable.cs" />
+    <Compile Include="Migrations\201801181714053_RemoveBrandIDFromApplicationUserTable.Designer.cs">
+      <DependentUpon>201801181714053_RemoveBrandIDFromApplicationUserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801182241253_AddDateTimeValuesToDocumentation.cs" />
+    <Compile Include="Migrations\201801182241253_AddDateTimeValuesToDocumentation.Designer.cs">
+      <DependentUpon>201801182241253_AddDateTimeValuesToDocumentation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801192257059_ModifyExhaustPipeSizeAddExhaustSystemConfiguration.cs" />
+    <Compile Include="Migrations\201801192257059_ModifyExhaustPipeSizeAddExhaustSystemConfiguration.Designer.cs">
+      <DependentUpon>201801192257059_ModifyExhaustPipeSizeAddExhaustSystemConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801221323331_UpdatedGasPipingSolutionEntity.cs" />
+    <Compile Include="Migrations\201801221323331_UpdatedGasPipingSolutionEntity.Designer.cs">
+      <DependentUpon>201801221323331_UpdatedGasPipingSolutionEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801221423518_UpdatedGasPipingSolutionEntityColumnRename.cs" />
+    <Compile Include="Migrations\201801221423518_UpdatedGasPipingSolutionEntityColumnRename.Designer.cs">
+      <DependentUpon>201801221423518_UpdatedGasPipingSolutionEntityColumnRename.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801222135049_AddColumsToExhaustPipingSolution.cs" />
+    <Compile Include="Migrations\201801222135049_AddColumsToExhaustPipingSolution.Designer.cs">
+      <DependentUpon>201801222135049_AddColumsToExhaustPipingSolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801241319445_GasPipingUpdate_AddedSingleUnit.cs" />
+    <Compile Include="Migrations\201801241319445_GasPipingUpdate_AddedSingleUnit.Designer.cs">
+      <DependentUpon>201801241319445_GasPipingUpdate_AddedSingleUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801251201520_ModifyMotorLoad.cs" />
+    <Compile Include="Migrations\201801251201520_ModifyMotorLoad.Designer.cs">
+      <DependentUpon>201801251201520_ModifyMotorLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801291326551_AddedEntitySharedProject.cs" />
+    <Compile Include="Migrations\201801291326551_AddedEntitySharedProject.Designer.cs">
+      <DependentUpon>201801291326551_AddedEntitySharedProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801311310303_AddedSomeMoreFieldInProjectAndSolutionOwnedBy.cs" />
+    <Compile Include="Migrations\201801311310303_AddedSomeMoreFieldInProjectAndSolutionOwnedBy.Designer.cs">
+      <DependentUpon>201801311310303_AddedSomeMoreFieldInProjectAndSolutionOwnedBy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801311924005_AddNotesFieldToSharedProjects.cs" />
+    <Compile Include="Migrations\201801311924005_AddNotesFieldToSharedProjects.Designer.cs">
+      <DependentUpon>201801311924005_AddNotesFieldToSharedProjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802010921147_AddOneMoreEntityMotorCalculation.cs" />
+    <Compile Include="Migrations\201802010921147_AddOneMoreEntityMotorCalculation.Designer.cs">
+      <DependentUpon>201802010921147_AddOneMoreEntityMotorCalculation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802011122141_AddSomeMoreEntityinConfigurationInput.cs" />
+    <Compile Include="Migrations\201802011122141_AddSomeMoreEntityinConfigurationInput.Designer.cs">
+      <DependentUpon>201802011122141_AddSomeMoreEntityinConfigurationInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802021437251_AddedSharedProjectSolutionEntity.cs" />
+    <Compile Include="Migrations\201802021437251_AddedSharedProjectSolutionEntity.Designer.cs">
+      <DependentUpon>201802021437251_AddedSharedProjectSolutionEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802051620223_AddedFieldsToSharedProjectSolution.cs" />
+    <Compile Include="Migrations\201802051620223_AddedFieldsToSharedProjectSolution.Designer.cs">
+      <DependentUpon>201802051620223_AddedFieldsToSharedProjectSolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802060949093_AddSomeMoreFieldsinStartingCode.cs" />
+    <Compile Include="Migrations\201802060949093_AddSomeMoreFieldsinStartingCode.Designer.cs">
+      <DependentUpon>201802060949093_AddSomeMoreFieldsinStartingCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802081155527_Modifyinmotorload.cs" />
+    <Compile Include="Migrations\201802081155527_Modifyinmotorload.Designer.cs">
+      <DependentUpon>201802081155527_Modifyinmotorload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802221253032_UpdatedPrecision.cs" />
+    <Compile Include="Migrations\201802221253032_UpdatedPrecision.Designer.cs">
+      <DependentUpon>201802221253032_UpdatedPrecision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802262008530_AddHarmonicProfileForHarmonicAnalysisReports.cs" />
+    <Compile Include="Migrations\201802262008530_AddHarmonicProfileForHarmonicAnalysisReports.Designer.cs">
+      <DependentUpon>201802262008530_AddHarmonicProfileForHarmonicAnalysisReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802271251472_AddedonemorefieldinGaspipesolution.cs" />
+    <Compile Include="Migrations\201802271251472_AddedonemorefieldinGaspipesolution.Designer.cs">
+      <DependentUpon>201802271251472_AddedonemorefieldinGaspipesolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802280729066_AddedtwomorefieldinExhaustpipesolution.cs" />
+    <Compile Include="Migrations\201802280729066_AddedtwomorefieldinExhaustpipesolution.Designer.cs">
+      <DependentUpon>201802280729066_AddedtwomorefieldinExhaustpipesolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803062129255_ModifiedCountryAndStateTables.cs" />
+    <Compile Include="Migrations\201803062129255_ModifiedCountryAndStateTables.Designer.cs">
+      <DependentUpon>201803062129255_ModifiedCountryAndStateTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803062218573_ModifiedStateTableAddCountryCode.cs" />
+    <Compile Include="Migrations\201803062218573_ModifiedStateTableAddCountryCode.Designer.cs">
+      <DependentUpon>201803062218573_ModifiedStateTableAddCountryCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803150747018_AddNewColumnLanguageKeyinBasePickListEntity.cs" />
+    <Compile Include="Migrations\201803150747018_AddNewColumnLanguageKeyinBasePickListEntity.Designer.cs">
+      <DependentUpon>201803150747018_AddNewColumnLanguageKeyinBasePickListEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803150812155_AddNewColumnLanguageKeyinCountryandState.cs" />
+    <Compile Include="Migrations\201803150812155_AddNewColumnLanguageKeyinCountryandState.Designer.cs">
+      <DependentUpon>201803150812155_AddNewColumnLanguageKeyinCountryandState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803151000236_AddNewColumnEditAccesNotedinSolutionEntity.cs" />
+    <Compile Include="Migrations\201803151000236_AddNewColumnEditAccesNotedinSolutionEntity.Designer.cs">
+      <DependentUpon>201803151000236_AddNewColumnEditAccesNotedinSolutionEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803162052472_AddRequestForQuoteEntity.cs" />
+    <Compile Include="Migrations\201803162052472_AddRequestForQuoteEntity.Designer.cs">
+      <DependentUpon>201803162052472_AddRequestForQuoteEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803191037402_AddNewColumnActiveCreatedByDatainHarmonicDeviceType.cs" />
+    <Compile Include="Migrations\201803191037402_AddNewColumnActiveCreatedByDatainHarmonicDeviceType.Designer.cs">
+      <DependentUpon>201803191037402_AddNewColumnActiveCreatedByDatainHarmonicDeviceType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803191535529_RequestForQuoteMerge.cs" />
+    <Compile Include="Migrations\201803191535529_RequestForQuoteMerge.Designer.cs">
+      <DependentUpon>201803191535529_RequestForQuoteMerge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803200912556_AddedFieldinProductfamilyActiveDateandLanguageKeyNullable.cs" />
+    <Compile Include="Migrations\201803200912556_AddedFieldinProductfamilyActiveDateandLanguageKeyNullable.Designer.cs">
+      <DependentUpon>201803200912556_AddedFieldinProductfamilyActiveDateandLanguageKeyNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803231143303_AddedOneMoreTableSearchFilter.cs" />
+    <Compile Include="Migrations\201803231143303_AddedOneMoreTableSearchFilter.Designer.cs">
+      <DependentUpon>201803231143303_AddedOneMoreTableSearchFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803271640027_ModifiedFuelConsumptionToDecimal.cs" />
+    <Compile Include="Migrations\201803271640027_ModifiedFuelConsumptionToDecimal.Designer.cs">
+      <DependentUpon>201803271640027_ModifiedFuelConsumptionToDecimal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803272050163_ModifiedPrecisionInGasPipeSizeTable.cs" />
+    <Compile Include="Migrations\201803272050163_ModifiedPrecisionInGasPipeSizeTable.Designer.cs">
+      <DependentUpon>201803272050163_ModifiedPrecisionInGasPipeSizeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803281847357_ModifiedPrecisionForAllowablePercentageInGasPipingSolution.cs" />
+    <Compile Include="Migrations\201803281847357_ModifiedPrecisionForAllowablePercentageInGasPipingSolution.Designer.cs">
+      <DependentUpon>201803281847357_ModifiedPrecisionForAllowablePercentageInGasPipingSolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803300803035_AddedOnemorecolumninMotorTypeandAddedOneMoreLanguageKeyinStartingMethod.cs" />
+    <Compile Include="Migrations\201803300803035_AddedOnemorecolumninMotorTypeandAddedOneMoreLanguageKeyinStartingMethod.Designer.cs">
+      <DependentUpon>201803300803035_AddedOnemorecolumninMotorTypeandAddedOneMoreLanguageKeyinStartingMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803300806242_NullableFalseAddedOnemorecolumninMotorTypeandAddedOneMoreLanguageKeyinStartingMethodNullableFalse.cs" />
+    <Compile Include="Migrations\201803300806242_NullableFalseAddedOnemorecolumninMotorTypeandAddedOneMoreLanguageKeyinStartingMethodNullableFalse.Designer.cs">
+      <DependentUpon>201803300806242_NullableFalseAddedOnemorecolumninMotorTypeandAddedOneMoreLanguageKeyinStartingMethodNullableFalse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803300854430_AddedOneMoreColumninStartingCodeLanguageKeyHp.cs" />
+    <Compile Include="Migrations\201803300854430_AddedOneMoreColumninStartingCodeLanguageKeyHp.Designer.cs">
+      <DependentUpon>201803300854430_AddedOneMoreColumninStartingCodeLanguageKeyHp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803311554196_AddedOneMoreFieldDefaulyHarmonicType.cs" />
+    <Compile Include="Migrations\201803311554196_AddedOneMoreFieldDefaulyHarmonicType.Designer.cs">
+      <DependentUpon>201803311554196_AddedOneMoreFieldDefaulyHarmonicType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804011819081_IsDefaultSelectionToConfigurationInput.cs" />
+    <Compile Include="Migrations\201804011819081_IsDefaultSelectionToConfigurationInput.Designer.cs">
+      <DependentUpon>201804011819081_IsDefaultSelectionToConfigurationInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804020908152_AddedMoreColumninStarttingMethodandHarmonicDeviceTypeNullable.cs" />
+    <Compile Include="Migrations\201804020908152_AddedMoreColumninStarttingMethodandHarmonicDeviceTypeNullable.Designer.cs">
+      <DependentUpon>201804020908152_AddedMoreColumninStarttingMethodandHarmonicDeviceTypeNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804020914523_AddedMoreColumninStarttingMethodandHarmonicDeviceTyperemoveNullable.cs" />
+    <Compile Include="Migrations\201804020914523_AddedMoreColumninStarttingMethodandHarmonicDeviceTyperemoveNullable.Designer.cs">
+      <DependentUpon>201804020914523_AddedMoreColumninStarttingMethodandHarmonicDeviceTyperemoveNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804021138551_CreateForeignKeyinMotorCalculationtoStartingCode.cs" />
+    <Compile Include="Migrations\201804021138551_CreateForeignKeyinMotorCalculationtoStartingCode.Designer.cs">
+      <DependentUpon>201804021138551_CreateForeignKeyinMotorCalculationtoStartingCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804100543219_ModifiedPrecision.cs" />
+    <Compile Include="Migrations\201804100543219_ModifiedPrecision.Designer.cs">
+      <DependentUpon>201804100543219_ModifiedPrecision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804052157445_ModiifedPrecisionInLoads.cs" />
+    <Compile Include="Migrations\201804052157445_ModiifedPrecisionInLoads.Designer.cs">
+      <DependentUpon>201804052157445_ModiifedPrecisionInLoads.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804111631074_AddedIsForLoadsToVoltageNominal.cs" />
+    <Compile Include="Migrations\201804111631074_AddedIsForLoadsToVoltageNominal.Designer.cs">
+      <DependentUpon>201804111631074_AddedIsForLoadsToVoltageNominal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804161515057_AddLasLoginDatePasswordResetDate.cs" />
+    <Compile Include="Migrations\201804161515057_AddLasLoginDatePasswordResetDate.Designer.cs">
+      <DependentUpon>201804161515057_AddLasLoginDatePasswordResetDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\BaseLoadEntity.cs" />
+    <Compile Include="Models\BasePickListEntity.cs" />
+    <Compile Include="Models\BasePipeSizeEntity.cs" />
+    <Compile Include="Models\BaseSolutionLoadEntity.cs" />
+    <Compile Include="Models\BaseSolutionSetupEntity.cs" />
+    <Compile Include="Models\IEntity.cs" />
+    <Compile Include="Models\Loads\ACLoad.cs" />
+    <Compile Include="Models\Loads\BasicLoad.cs" />
+    <Compile Include="Models\Loads\LightingLoad.cs" />
+    <Compile Include="Models\Loads\LoadSequence.cs" />
+    <Compile Include="Models\Loads\MotorLoad.cs" />
+    <Compile Include="Models\Loads\UPSLoad.cs" />
+    <Compile Include="Models\Loads\WelderLoad.cs" />
+    <Compile Include="Models\PickList\Load\MotorCalculation.cs" />
+    <Compile Include="Models\PickList\Solution\Alternator.cs" />
+    <Compile Include="Models\PickList\Load\ChargeRate.cs" />
+    <Compile Include="Models\PickList\Load\Compressors.cs" />
+    <Compile Include="Models\PickList\Load\ConfigurationInput.cs" />
+    <Compile Include="Models\PickList\Load\CoolingLoad.cs" />
+    <Compile Include="Models\PickList\Solution\AlternatorFamily.cs" />
+    <Compile Include="Models\PickList\Solution\Documentation.cs" />
+    <Compile Include="Models\PickList\Load\Efficiency.cs" />
+    <Compile Include="Models\PickList\Solution\ExhaustPipingPipeSize.cs" />
+    <Compile Include="Models\PickList\Solution\ExhaustSystemConfiguration.cs" />
+    <Compile Include="Models\PickList\Solution\FamilySelectionMethod.cs" />
+    <Compile Include="Models\PickList\Solution\GasPipingPipeSize.cs" />
+    <Compile Include="Models\PickList\Solution\GasPipingSizingMethod.cs" />
+    <Compile Include="Models\PickList\Solution\Generator.cs" />
+    <Compile Include="Models\PickList\Load\HarmonicContent.cs" />
+    <Compile Include="Models\PickList\Load\LightingType.cs" />
+    <Compile Include="Models\PickList\Load\Load.cs" />
+    <Compile Include="Models\PickList\Load\LoadLevel.cs" />
+    <Compile Include="Models\PickList\Solution\ParallelQuantity.cs" />
+    <Compile Include="Models\Project\ExhaustPipingSolution.cs" />
+    <Compile Include="Models\Project\GasPipingSolution.cs" />
+    <Compile Include="Models\Project\GeneratorAvailableAlternator.cs" />
+    <Compile Include="Models\Project\GeneratorAvailableVoltage.cs" />
+    <Compile Include="Models\PickList\Load\MotorLoadLevel.cs" />
+    <Compile Include="Models\PickList\Load\MotorLoadType.cs" />
+    <Compile Include="Models\PickList\Load\MotorType.cs" />
+    <Compile Include="Models\PickList\Load\PF.cs" />
+    <Compile Include="Models\PickList\Load\Phase.cs" />
+    <Compile Include="Models\PickList\Load\PowerFactor.cs" />
+    <Compile Include="Models\PickList\Solution\ProductFamily.cs" />
+    <Compile Include="Models\PickList\Load\ReheatLoad.cs" />
+    <Compile Include="Models\PickList\Solution\SizingMethod.cs" />
+    <Compile Include="Models\PickList\Load\StartingCode.cs" />
+    <Compile Include="Models\PickList\Load\StartingMethod.cs" />
+    <Compile Include="Models\PickList\Load\UPSType.cs" />
+    <Compile Include="Models\PickList\Load\WelderType.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\AmbientTemperature.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\ContinuousAllowableVoltageDistortion.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\DesiredRunTime.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\DesiredSound.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\Elevation.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\EnclosureType.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\EngineDuty.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\Frequency.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\FrequencyDip.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\FrequencyDipUnits.cs" />
+    <Compile Include="Models\PickList\Load\HarmonicDeviceType.cs" />
+    <Compile Include="Models\PickList\Load\LoadFamily.cs" />
+    <Compile Include="Models\PickList\Load\Sequence.cs" />
+    <Compile Include="Models\PickList\Load\SequenceType.cs" />
+    <Compile Include="Models\PickList\Load\SizeUnits.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\FuelTank.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\FuelType.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\LoadSequenceCyclic.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\MaxRunningLoad.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\MomentaryAllowableVoltageDistortion.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\RegulatoryFilter.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\SolutionApplication.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\Units.cs" />
+    <Compile Include="Models\BaseVoltageEntity.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\VoltageDip.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\VoltageDipUnits.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\VoltageNominal.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\VoltagePhase.cs" />
+    <Compile Include="Models\PickList\SolutionSetup\VoltageSpecific.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\Loads\LoadDefaults.cs" />
+    <Compile Include="Models\Project\GeneratorRegulatoryFilter.cs" />
+    <Compile Include="Models\Project\RecommendedProduct.cs" />
+    <Compile Include="Models\Project\RequestForQuote.cs" />
+    <Compile Include="Models\Project\SearchFilter.cs" />
+    <Compile Include="Models\Project\SharedProject.cs" />
+    <Compile Include="Models\Project\SharedProjectSolution.cs" />
+    <Compile Include="Models\Project\SolutionSetup.cs" />
+    <Compile Include="Models\Project\Solution.cs" />
+    <Compile Include="Models\Reports\HarmonicProfile.cs" />
+    <Compile Include="Models\TraceMessage.cs" />
+    <Compile Include="Models\User\Brand.cs" />
+    <Compile Include="Models\User\Country.cs" />
+    <Compile Include="Models\User\State.cs" />
+    <Compile Include="Models\User\UserCategory.cs" />
+    <Compile Include="Models\User\UserDefaultSolutionSetup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\User\ApplicationUser.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\PowerDesignPro.Common\PowerDesignPro.Common.csproj">
+      <Project>{626C80D6-CBE1-4439-86C7-E70DC9F8BB74}</Project>
+      <Name>PowerDesignPro.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201710182100382_AddedContactDetailsToProjectEntity.resx">
+      <DependentUpon>201710182100382_AddedContactDetailsToProjectEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710240313244_AddedPickListEntities.resx">
+      <DependentUpon>201710240313244_AddedPickListEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710242123491_ModifiedPickListEntities.resx">
+      <DependentUpon>201710242123491_ModifiedPickListEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710250908361_DefaultSolutionSetup.resx">
+      <DependentUpon>201710250908361_DefaultSolutionSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710260111219_AddedSolutionEntity.resx">
+      <DependentUpon>201710260111219_AddedSolutionEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710260222300_201710260111219_AddedSolutionEntity.resx">
+      <DependentUpon>201710260222300_201710260111219_AddedSolutionEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710260245160_ModifiedSolutionSetupEntity.resx">
+      <DependentUpon>201710260245160_ModifiedSolutionSetupEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710261420194_SolutionChanges.resx">
+      <DependentUpon>201710261420194_SolutionChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710261918123_ModifiedVoltageDipFrequencyDipEntity.resx">
+      <DependentUpon>201710261918123_ModifiedVoltageDipFrequencyDipEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710262108393_ModifiedVoltageSpecificEntity.resx">
+      <DependentUpon>201710262108393_ModifiedVoltageSpecificEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710270021075_ModifiedSolutionSetupEntityForLoadSequenceCyclic.resx">
+      <DependentUpon>201710270021075_ModifiedSolutionSetupEntityForLoadSequenceCyclic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710270156313_MadeUserIDOptionalForUserDefaultSetup.resx">
+      <DependentUpon>201710270156313_MadeUserIDOptionalForUserDefaultSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710271229496_solutionSetupUpdate.resx">
+      <DependentUpon>201710271229496_solutionSetupUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710271605025_AddNameFieldToSolutionEntity.resx">
+      <DependentUpon>201710271605025_AddNameFieldToSolutionEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710301618020_AddCreatedModifiedDateTimeForSolution.resx">
+      <DependentUpon>201710301618020_AddCreatedModifiedDateTimeForSolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711011513210_AddedActiveColumnForSolution.resx">
+      <DependentUpon>201711011513210_AddedActiveColumnForSolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031010097_AddedCreatedByAndModifiedByForSolution.resx">
+      <DependentUpon>201711031010097_AddedCreatedByAndModifiedByForSolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711070907055_AddedCreatedByAndModifiedByAndBothDatetimeForSolutionSetup.resx">
+      <DependentUpon>201711070907055_AddedCreatedByAndModifiedByAndBothDatetimeForSolutionSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071351187_FuelTypeDependentsChanges.resx">
+      <DependentUpon>201711071351187_FuelTypeDependentsChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071439159_FuelTankAndRunTimeChanges.resx">
+      <DependentUpon>201711071439159_FuelTankAndRunTimeChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711072000332_ModifiedFuelTank_DesiredRunTimeFields.resx">
+      <DependentUpon>201711072000332_ModifiedFuelTank_DesiredRunTimeFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711080206048_AddedDefaultSelectedFieldToSomePickListEntities.resx">
+      <DependentUpon>201711080206048_AddedDefaultSelectedFieldToSomePickListEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711090536253_AddOrdinalFieldToPickList.resx">
+      <DependentUpon>201711090536253_AddOrdinalFieldToPickList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711101050491_AddedFirstnameLastnameAddressPhoneCompanyForUser.resx">
+      <DependentUpon>201711101050491_AddedFirstnameLastnameAddressPhoneCompanyForUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711101650186_AddTraceMessageEntity.resx">
+      <DependentUpon>201711101650186_AddTraceMessageEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711130928251_AddedRegulatoryFilterEntity.resx">
+      <DependentUpon>201711130928251_AddedRegulatoryFilterEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711131118533_AddedMoreFieldForuserEntity.resx">
+      <DependentUpon>201711131118533_AddedMoreFieldForuserEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711151120105_AddedMoreFieldToUserEntity.resx">
+      <DependentUpon>201711151120105_AddedMoreFieldToUserEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711151402273_AddedMoreFieldToBaseLoad.resx">
+      <DependentUpon>201711151402273_AddedMoreFieldToBaseLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711161215390_AddedMoreFieldToUserEntityAndChangeBasicLoad.resx">
+      <DependentUpon>201711161215390_AddedMoreFieldToUserEntityAndChangeBasicLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711161228232_AddedMoreFieldToUserEntityNonNullable.resx">
+      <DependentUpon>201711161228232_AddedMoreFieldToUserEntityNonNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711170459006_AddEntitiesForBasicLoadType.resx">
+      <DependentUpon>201711170459006_AddEntitiesForBasicLoadType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711170505488_ModifiedForeignKeyInStateTable.resx">
+      <DependentUpon>201711170505488_ModifiedForeignKeyInStateTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711171533371_AddedMoreFieldToBasicLoadEntity.resx">
+      <DependentUpon>201711171533371_AddedMoreFieldToBasicLoadEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711171615113_AddedLoadEntity.resx">
+      <DependentUpon>201711171615113_AddedLoadEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711172241326_AddDefaultSelectionToLoadEntity.resx">
+      <DependentUpon>201711172241326_AddDefaultSelectionToLoadEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711201227215_ModifiedBasicLoadTable.resx">
+      <DependentUpon>201711201227215_ModifiedBasicLoadTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711201523427_AddedSomeMoreFieldToBaseSolutionLoadEntity.resx">
+      <DependentUpon>201711201523427_AddedSomeMoreFieldToBaseSolutionLoadEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711201629247_AddSolutionNavigationToBasicLoadEntity_DateTimeFieldsToLoadDefaults.resx">
+      <DependentUpon>201711201629247_AddSolutionNavigationToBasicLoadEntity_DateTimeFieldsToLoadDefaults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711201741071_AddStartingLoadIDToLoadDefaults.resx">
+      <DependentUpon>201711201741071_AddStartingLoadIDToLoadDefaults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711211940286_ModifySizeRunningNullableInBasicLoad.resx">
+      <DependentUpon>201711211940286_ModifySizeRunningNullableInBasicLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711220305135_ModifyVoltagePhaseIDNullableInBasicLoad.resx">
+      <DependentUpon>201711220305135_ModifyVoltagePhaseIDNullableInBasicLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711240808472_ModifiedBasicLoadEntity.resx">
+      <DependentUpon>201711240808472_ModifiedBasicLoadEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711241450197_AddedMoreLoadEntitie.resx">
+      <DependentUpon>201711241450197_AddedMoreLoadEntitie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271420234_AddedMoreLoadsEntity.resx">
+      <DependentUpon>201711271420234_AddedMoreLoadsEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271428382_AddedMoreLoadsTypeEntity.resx">
+      <DependentUpon>201711271428382_AddedMoreLoadsTypeEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711281214273_AddedDateFieldApplicationUser.resx">
+      <DependentUpon>201711281214273_AddedDateFieldApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711282114430_ModifiedStateCountryIDNUllable.resx">
+      <DependentUpon>201711282114430_ModifiedStateCountryIDNUllable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291224226_UpdatedLoadEntities.resx">
+      <DependentUpon>201711291224226_UpdatedLoadEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291302048_UpdatedLoadEntitiesBaseSolution.resx">
+      <DependentUpon>201711291302048_UpdatedLoadEntitiesBaseSolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291406556_AddedMoreEntityForSolutionSummary.resx">
+      <DependentUpon>201711291406556_AddedMoreEntityForSolutionSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712011235108_AddedEntityToBaseSolutionLoadEntity.resx">
+      <DependentUpon>201712011235108_AddedEntityToBaseSolutionLoadEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712042048434_AddedVoltageNominalSpecificAndPhaseToBaseSolutionLoadEntity.resx">
+      <DependentUpon>201712042048434_AddedVoltageNominalSpecificAndPhaseToBaseSolutionLoadEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712042107363_RemovedVoltageNominalSpecificAndPhaseFromMotorUPSLightingEntity.resx">
+      <DependentUpon>201712042107363_RemovedVoltageNominalSpecificAndPhaseFromMotorUPSLightingEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712052022027_UseSizeUnitsTableForACLoads.resx">
+      <DependentUpon>201712052022027_UseSizeUnitsTableForACLoads.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712052109286_UseSizeUnitsTableForACLoads_2.resx">
+      <DependentUpon>201712052109286_UseSizeUnitsTableForACLoads_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712052132478_UseSizeUnitsTableForACLoads_3.resx">
+      <DependentUpon>201712052132478_UseSizeUnitsTableForACLoads_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712052317140_AddedModiifedSolutionSummaryEntities.resx">
+      <DependentUpon>201712052317140_AddedModiifedSolutionSummaryEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712061749441_AddColumnsToAlternatorTable.resx">
+      <DependentUpon>201712061749441_AddColumnsToAlternatorTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712061954224_AddColumnsToGeneratorAndDocumentationTable.resx">
+      <DependentUpon>201712061954224_AddColumnsToGeneratorAndDocumentationTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712071252404_UpdatedBaseSolutionEntityForHArmonicAndShedField.resx">
+      <DependentUpon>201712071252404_UpdatedBaseSolutionEntityForHArmonicAndShedField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712081603221_AddedLoadSequenceEntity.resx">
+      <DependentUpon>201712081603221_AddedLoadSequenceEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712111336067_MissedDbChanges.resx">
+      <DependentUpon>201712111336067_MissedDbChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712121709052_AddForeignKeysToLightingType.resx">
+      <DependentUpon>201712121709052_AddForeignKeysToLightingType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712121731399_AddHarmonicContentIDToLightingType.resx">
+      <DependentUpon>201712121731399_AddHarmonicContentIDToLightingType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712122016126_ModifyPropertiesNullableLightingLoad.resx">
+      <DependentUpon>201712122016126_ModifyPropertiesNullableLightingLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712122120000_AddHarmonicDeviceTypeToWelderType.resx">
+      <DependentUpon>201712122120000_AddHarmonicDeviceTypeToWelderType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712141353039_CreatFieldNullableinUPSEntity.resx">
+      <DependentUpon>201712141353039_CreatFieldNullableinUPSEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712141406063_addedtwomorefieldinUPSLoad.resx">
+      <DependentUpon>201712141406063_addedtwomorefieldinUPSLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712141412081_addedonemorefieldnullableinupsload.resx">
+      <DependentUpon>201712141412081_addedonemorefieldnullableinupsload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712150838333_MissingMigration.resx">
+      <DependentUpon>201712150838333_MissingMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712150924119_ModifiedUPSLoad.resx">
+      <DependentUpon>201712150924119_ModifiedUPSLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712151334511_ModifiedUPSTypeEntitywithnullable.resx">
+      <DependentUpon>201712151334511_ModifiedUPSTypeEntitywithnullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712151338312_ModifiedUPSTypeEntitywithoutnullable.resx">
+      <DependentUpon>201712151338312_ModifiedUPSTypeEntitywithoutnullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712142004513_ModiifedAlternatorEntity.resx">
+      <DependentUpon>201712142004513_ModiifedAlternatorEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712142032140_ModiifedGeneratorEntity_AddedGeneratorAvailableVoltagesAlternators.resx">
+      <DependentUpon>201712142032140_ModiifedGeneratorEntity_AddedGeneratorAvailableVoltagesAlternators.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712142045312_DateTimeFieldsToGeneratorAvailableTables.resx">
+      <DependentUpon>201712142045312_DateTimeFieldsToGeneratorAvailableTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712152251126_merge.resx">
+      <DependentUpon>201712152251126_merge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712190211197_Remover50HzColumnsFromGenset.resx">
+      <DependentUpon>201712190211197_Remover50HzColumnsFromGenset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712200506386_merge1.resx">
+      <DependentUpon>201712200506386_merge1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712221616071_AddedUPSRevertBatteryFieldToLoadDefaults.resx">
+      <DependentUpon>201712221616071_AddedUPSRevertBatteryFieldToLoadDefaults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712221631170_ModifiedUPSRevertToBatteryNonNullable.resx">
+      <DependentUpon>201712221631170_ModifiedUPSRevertToBatteryNonNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712271423176_UpdatedGeneratorAvailVoltage.resx">
+      <DependentUpon>201712271423176_UpdatedGeneratorAvailVoltage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712272209414_MadeGeneratorIDAlternatorIDNullableInRecommendedProduct.resx">
+      <DependentUpon>201712272209414_MadeGeneratorIDAlternatorIDNullableInRecommendedProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712272258475_RemoveCostPerKWFromGenerator.resx">
+      <DependentUpon>201712272258475_RemoveCostPerKWFromGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712280143431_AddGeneratorRegulatorFilterEntity.resx">
+      <DependentUpon>201712280143431_AddGeneratorRegulatorFilterEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712280817598_UpdateGeneratorRegulatoryFilter.resx">
+      <DependentUpon>201712280817598_UpdateGeneratorRegulatoryFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712282018367_ModifiedEntitiesForMPSLogic.resx">
+      <DependentUpon>201712282018367_ModifiedEntitiesForMPSLogic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801031742438_AddedParallelQuantityRemovedModuleSize.resx">
+      <DependentUpon>201801031742438_AddedParallelQuantityRemovedModuleSize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801051127577_ModifedGeneratorAvailableAlternator.resx">
+      <DependentUpon>201801051127577_ModifedGeneratorAvailableAlternator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801091543083_AddedSomeMoreFieldinGensetAlnernaterandFamilies.resx">
+      <DependentUpon>201801091543083_AddedSomeMoreFieldinGensetAlnernaterandFamilies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801111956361_AddBrandIDToProductFamily.resx">
+      <DependentUpon>201801111956361_AddBrandIDToProductFamily.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801111958022_AddBrandIDNonNullableToProductFamily.resx">
+      <DependentUpon>201801111958022_AddBrandIDNonNullableToProductFamily.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801112153170_ModifyProductFamilyIDNullable.resx">
+      <DependentUpon>201801112153170_ModifyProductFamilyIDNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801121226323_AddedActivefieldinLoadDefault.resx">
+      <DependentUpon>201801121226323_AddedActivefieldinLoadDefault.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801121243364_AddedonemoreactivefiledinLoad.resx">
+      <DependentUpon>201801121243364_AddedonemoreactivefiledinLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801161217294_AddedMoreoneEntityMaintainMarketVertical.resx">
+      <DependentUpon>201801161217294_AddedMoreoneEntityMaintainMarketVertical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801161326586_GasPipeChanges.resx">
+      <DependentUpon>201801161326586_GasPipeChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801162049249_DeleteMarketVerticalTable.resx">
+      <DependentUpon>201801162049249_DeleteMarketVerticalTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801162054547_RemoveColumnFromsolutionApplication.resx">
+      <DependentUpon>201801162054547_RemoveColumnFromsolutionApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801181422434_GasPipeSolutionUpdated.resx">
+      <DependentUpon>201801181422434_GasPipeSolutionUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801181712581_RemoveBrandIDFromApplicationUser.resx">
+      <DependentUpon>201801181712581_RemoveBrandIDFromApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801181714053_RemoveBrandIDFromApplicationUserTable.resx">
+      <DependentUpon>201801181714053_RemoveBrandIDFromApplicationUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801182241253_AddDateTimeValuesToDocumentation.resx">
+      <DependentUpon>201801182241253_AddDateTimeValuesToDocumentation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801192257059_ModifyExhaustPipeSizeAddExhaustSystemConfiguration.resx">
+      <DependentUpon>201801192257059_ModifyExhaustPipeSizeAddExhaustSystemConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801221323331_UpdatedGasPipingSolutionEntity.resx">
+      <DependentUpon>201801221323331_UpdatedGasPipingSolutionEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801221423518_UpdatedGasPipingSolutionEntityColumnRename.resx">
+      <DependentUpon>201801221423518_UpdatedGasPipingSolutionEntityColumnRename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801222135049_AddColumsToExhaustPipingSolution.resx">
+      <DependentUpon>201801222135049_AddColumsToExhaustPipingSolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801241319445_GasPipingUpdate_AddedSingleUnit.resx">
+      <DependentUpon>201801241319445_GasPipingUpdate_AddedSingleUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801251201520_ModifyMotorLoad.resx">
+      <DependentUpon>201801251201520_ModifyMotorLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801291326551_AddedEntitySharedProject.resx">
+      <DependentUpon>201801291326551_AddedEntitySharedProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801311310303_AddedSomeMoreFieldInProjectAndSolutionOwnedBy.resx">
+      <DependentUpon>201801311310303_AddedSomeMoreFieldInProjectAndSolutionOwnedBy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801311924005_AddNotesFieldToSharedProjects.resx">
+      <DependentUpon>201801311924005_AddNotesFieldToSharedProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802010921147_AddOneMoreEntityMotorCalculation.resx">
+      <DependentUpon>201802010921147_AddOneMoreEntityMotorCalculation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802011122141_AddSomeMoreEntityinConfigurationInput.resx">
+      <DependentUpon>201802011122141_AddSomeMoreEntityinConfigurationInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802021437251_AddedSharedProjectSolutionEntity.resx">
+      <DependentUpon>201802021437251_AddedSharedProjectSolutionEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802051620223_AddedFieldsToSharedProjectSolution.resx">
+      <DependentUpon>201802051620223_AddedFieldsToSharedProjectSolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802060949093_AddSomeMoreFieldsinStartingCode.resx">
+      <DependentUpon>201802060949093_AddSomeMoreFieldsinStartingCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802081155527_Modifyinmotorload.resx">
+      <DependentUpon>201802081155527_Modifyinmotorload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802221253032_UpdatedPrecision.resx">
+      <DependentUpon>201802221253032_UpdatedPrecision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802262008530_AddHarmonicProfileForHarmonicAnalysisReports.resx">
+      <DependentUpon>201802262008530_AddHarmonicProfileForHarmonicAnalysisReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802271251472_AddedonemorefieldinGaspipesolution.resx">
+      <DependentUpon>201802271251472_AddedonemorefieldinGaspipesolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802280729066_AddedtwomorefieldinExhaustpipesolution.resx">
+      <DependentUpon>201802280729066_AddedtwomorefieldinExhaustpipesolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803062129255_ModifiedCountryAndStateTables.resx">
+      <DependentUpon>201803062129255_ModifiedCountryAndStateTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803062218573_ModifiedStateTableAddCountryCode.resx">
+      <DependentUpon>201803062218573_ModifiedStateTableAddCountryCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803150747018_AddNewColumnLanguageKeyinBasePickListEntity.resx">
+      <DependentUpon>201803150747018_AddNewColumnLanguageKeyinBasePickListEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803150812155_AddNewColumnLanguageKeyinCountryandState.resx">
+      <DependentUpon>201803150812155_AddNewColumnLanguageKeyinCountryandState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803151000236_AddNewColumnEditAccesNotedinSolutionEntity.resx">
+      <DependentUpon>201803151000236_AddNewColumnEditAccesNotedinSolutionEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803162052472_AddRequestForQuoteEntity.resx">
+      <DependentUpon>201803162052472_AddRequestForQuoteEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803191037402_AddNewColumnActiveCreatedByDatainHarmonicDeviceType.resx">
+      <DependentUpon>201803191037402_AddNewColumnActiveCreatedByDatainHarmonicDeviceType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803191535529_RequestForQuoteMerge.resx">
+      <DependentUpon>201803191535529_RequestForQuoteMerge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803200912556_AddedFieldinProductfamilyActiveDateandLanguageKeyNullable.resx">
+      <DependentUpon>201803200912556_AddedFieldinProductfamilyActiveDateandLanguageKeyNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803231143303_AddedOneMoreTableSearchFilter.resx">
+      <DependentUpon>201803231143303_AddedOneMoreTableSearchFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803271640027_ModifiedFuelConsumptionToDecimal.resx">
+      <DependentUpon>201803271640027_ModifiedFuelConsumptionToDecimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803272050163_ModifiedPrecisionInGasPipeSizeTable.resx">
+      <DependentUpon>201803272050163_ModifiedPrecisionInGasPipeSizeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803281847357_ModifiedPrecisionForAllowablePercentageInGasPipingSolution.resx">
+      <DependentUpon>201803281847357_ModifiedPrecisionForAllowablePercentageInGasPipingSolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803300803035_AddedOnemorecolumninMotorTypeandAddedOneMoreLanguageKeyinStartingMethod.resx">
+      <DependentUpon>201803300803035_AddedOnemorecolumninMotorTypeandAddedOneMoreLanguageKeyinStartingMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803300806242_NullableFalseAddedOnemorecolumninMotorTypeandAddedOneMoreLanguageKeyinStartingMethodNullableFalse.resx">
+      <DependentUpon>201803300806242_NullableFalseAddedOnemorecolumninMotorTypeandAddedOneMoreLanguageKeyinStartingMethodNullableFalse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803300854430_AddedOneMoreColumninStartingCodeLanguageKeyHp.resx">
+      <DependentUpon>201803300854430_AddedOneMoreColumninStartingCodeLanguageKeyHp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803311554196_AddedOneMoreFieldDefaulyHarmonicType.resx">
+      <DependentUpon>201803311554196_AddedOneMoreFieldDefaulyHarmonicType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804011819081_IsDefaultSelectionToConfigurationInput.resx">
+      <DependentUpon>201804011819081_IsDefaultSelectionToConfigurationInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804020908152_AddedMoreColumninStarttingMethodandHarmonicDeviceTypeNullable.resx">
+      <DependentUpon>201804020908152_AddedMoreColumninStarttingMethodandHarmonicDeviceTypeNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804020914523_AddedMoreColumninStarttingMethodandHarmonicDeviceTyperemoveNullable.resx">
+      <DependentUpon>201804020914523_AddedMoreColumninStarttingMethodandHarmonicDeviceTyperemoveNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804021138551_CreateForeignKeyinMotorCalculationtoStartingCode.resx">
+      <DependentUpon>201804021138551_CreateForeignKeyinMotorCalculationtoStartingCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804100543219_ModifiedPrecision.resx">
+      <DependentUpon>201804100543219_ModifiedPrecision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804052157445_ModiifedPrecisionInLoads.resx">
+      <DependentUpon>201804052157445_ModiifedPrecisionInLoads.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804111631074_AddedIsForLoadsToVoltageNominal.resx">
+      <DependentUpon>201804111631074_AddedIsForLoadsToVoltageNominal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804161515057_AddLasLoginDatePasswordResetDate.resx">
+      <DependentUpon>201804161515057_AddLasLoginDatePasswordResetDate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

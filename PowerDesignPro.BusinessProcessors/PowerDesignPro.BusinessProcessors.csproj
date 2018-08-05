@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9216BB06-35E6-4A32-9224-535B00E5C6CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PowerDesignPro.BusinessProcessors</RootNamespace>
+    <AssemblyName>PowerDesignPro.BusinessProcessors</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <OutputPath>bin\QA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Pdf, Version=8.2.0.0, Culture=neutral, PublicKeyToken=47b2d0fcacdd3eb6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>_binaries\Aspose.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words, Version=18.1.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>_binaries\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dtos\AddressValidationRequestDto.cs" />
+    <Compile Include="Dtos\Admin\AdminLoadDefaultDto.cs" />
+    <Compile Include="Dtos\Admin\AdminResponseDto.cs" />
+    <Compile Include="Dtos\Admin\AlternatorDto.cs" />
+    <Compile Include="Dtos\Admin\AlternatorFamilyDto.cs" />
+    <Compile Include="Dtos\Admin\AlternatorFamilyTreeDto.cs" />
+    <Compile Include="Dtos\Admin\DocumentationDto.cs" />
+    <Compile Include="Dtos\Admin\ImportAlternatorDataRequestDto.cs" />
+    <Compile Include="Dtos\Admin\ImportGensetDataRequestDto.cs" />
+    <Compile Include="Dtos\Admin\SolutionApplicationDto.cs" />
+    <Compile Include="Dtos\Admin\ProductFamilyDto.cs" />
+    <Compile Include="Dtos\Admin\SearchAdminRequestDto.cs" />
+    <Compile Include="Dtos\ForgotPasswordDto.cs" />
+    <Compile Include="Dtos\Loads\ACLoadDto.cs" />
+    <Compile Include="Dtos\Loads\MotorCalculationDto.cs" />
+    <Compile Include="Dtos\PickList\AlternatorPickListDto.cs" />
+    <Compile Include="Dtos\PickList\CountryPickListDto.cs" />
+    <Compile Include="Dtos\PickList\ExhaustPipingPipeSizeDto.cs" />
+    <Compile Include="Dtos\PickList\FuelTypeDto.cs" />
+    <Compile Include="Dtos\PickList\GasPipingPipeSizeDto.cs" />
+    <Compile Include="Dtos\PickList\GeneratorPickListDto.cs" />
+    <Compile Include="Dtos\PickList\MotorTypeDto.cs" />
+    <Compile Include="Dtos\PickList\StartingCodeDto.cs" />
+    <Compile Include="Dtos\PickList\StartingMethodDto.cs" />
+    <Compile Include="Dtos\Project\AlternatorDetail.cs" />
+    <Compile Include="Dtos\Project\DashboardSharedProjectDetailDto.cs" />
+    <Compile Include="Dtos\Project\ExhaustPipingDto.cs" />
+    <Compile Include="Dtos\Project\ExhaustPipingReportDto.cs" />
+    <Compile Include="Dtos\Project\ExhaustPipingRequestDto.cs" />
+    <Compile Include="Dtos\Project\FuelConfigDto.cs" />
+    <Compile Include="Dtos\Project\GasPipingDto.cs" />
+    <Compile Include="Dtos\Project\GasPipingReportDto.cs" />
+    <Compile Include="Dtos\Project\GasPipingRequestDto.cs" />
+    <Compile Include="Dtos\Project\GeneratorDetail.cs" />
+    <Compile Include="Dtos\Admin\GeneratorDto.cs" />
+    <Compile Include="Dtos\Project\GrantEditAccessResponseDto.cs" />
+    <Compile Include="Dtos\Project\ProjectSolutionListDto.cs" />
+    <Compile Include="Dtos\Project\RecommendedProductRequestDto.cs" />
+    <Compile Include="Dtos\Project\Reports\HarmonicAnalysisDto.cs" />
+    <Compile Include="Dtos\Project\Reports\HarmonicAnalysisInputsDto.cs" />
+    <Compile Include="Dtos\Project\Reports\TransientAnalysisDto.cs" />
+    <Compile Include="Dtos\Project\RequestForQuoteDto.cs" />
+    <Compile Include="Dtos\Project\SearchShareProjectRequestDto.cs" />
+    <Compile Include="Dtos\Project\SharedProjectsDto.cs" />
+    <Compile Include="Dtos\Project\SolutionHeaderDetailDto.cs" />
+    <Compile Include="Dtos\Project\SolutionSummaryGeneratorDocumentationDto.cs" />
+    <Compile Include="Dtos\Project\UnitMeasureDto.cs" />
+    <Compile Include="Dtos\Project\UpdateFuelTypeForSolutionRequestDto.cs" />
+    <Compile Include="Dtos\ReportModelDto.cs" />
+    <Compile Include="Dtos\ResendConfirmationEmailDto.cs" />
+    <Compile Include="Dtos\ResetPasswordDto.cs" />
+    <Compile Include="Dtos\SummaryReportDto.cs" />
+    <Compile Include="Dtos\THIDHarmonics\AllContinuousHarmonicDistortion.cs" />
+    <Compile Include="Dtos\THIDHarmonics\LargestContinousHarmonicsWithLoadFactor.cs" />
+    <Compile Include="Dtos\THIDHarmonics\LargestMomentaryHarmonics.cs" />
+    <Compile Include="Dtos\THIDHarmonics\PeakHarmonicWithLoadFactor.cs" />
+    <Compile Include="Dtos\PickList\ACLoadPickListDto.cs" />
+    <Compile Include="Dtos\PickList\LightingTypeDto.cs" />
+    <Compile Include="Dtos\PickList\UPSTypeDto.cs" />
+    <Compile Include="Dtos\PickList\WelderTypeDto.cs" />
+    <Compile Include="Dtos\Project\AddProjectDto.cs" />
+    <Compile Include="Dtos\BaseDto.cs" />
+    <Compile Include="Dtos\Loads\BaseLoadDto.cs" />
+    <Compile Include="Dtos\Project\BaseLoadListDto.cs" />
+    <Compile Include="Dtos\Project\BaseSolutionLimitsDto.cs" />
+    <Compile Include="Dtos\Project\BaseSolutionLoadDto.cs" />
+    <Compile Include="Dtos\PickList\BaseSolutionLoadPickListDto.cs" />
+    <Compile Include="Dtos\Project\BaseSolutionSetupDto.cs" />
+    <Compile Include="Dtos\Project\BaseSolutionSetupMappingValuesDto.cs" />
+    <Compile Include="Dtos\Loads\BasicLoadDto.cs" />
+    <Compile Include="Dtos\PickList\BasicLoadPickListDto.cs" />
+    <Compile Include="Dtos\PickList\ConfigurationInputDto.cs" />
+    <Compile Include="Dtos\PickList\HarmonicContentDto.cs" />
+    <Compile Include="Dtos\Loads\LightingLoadDto.cs" />
+    <Compile Include="Dtos\PickList\LightingLoadPickListDto.cs" />
+    <Compile Include="Dtos\Loads\LoadSequenceRequestDto.cs" />
+    <Compile Include="Dtos\Loads\LoadSequenceShedRequestDto.cs" />
+    <Compile Include="Dtos\Project\SolutionSummaryLoadSummaryDto.cs" />
+    <Compile Include="Dtos\Project\LoadSummaryLoadsDto.cs" />
+    <Compile Include="Dtos\Project\SolutionSummaryRecommendedProductDto.cs" />
+    <Compile Include="Dtos\Loads\MotorLoadDto.cs" />
+    <Compile Include="Dtos\PickList\MotorLoadPickListDto.cs" />
+    <Compile Include="Dtos\Project\DashboardProjectDetailDto.cs" />
+    <Compile Include="Dtos\Project\AddProjectResponseDto.cs" />
+    <Compile Include="Dtos\PickList\FuelTankDto.cs" />
+    <Compile Include="Dtos\PickList\DesiredRunTimeDto.cs" />
+    <Compile Include="Dtos\Project\GlobalDefaultSolutionSetupDto.cs" />
+    <Compile Include="Dtos\PickList\HarmonicDeviceTypeDto.cs" />
+    <Compile Include="Dtos\Loads\LoadDefaultDto.cs" />
+    <Compile Include="Dtos\Loads\LoadsDto.cs" />
+    <Compile Include="Dtos\PickList\PickListDto.cs" />
+    <Compile Include="Dtos\Project\ProjectDetailDto.cs" />
+    <Compile Include="Dtos\PickList\ProjectSolutionPickListDto.cs" />
+    <Compile Include="Dtos\PickList\RegulatoryFilterDto.cs" />
+    <Compile Include="Dtos\Loads\SearchBaseLoadRequestDto.cs" />
+    <Compile Include="Dtos\PickList\SequenceDto.cs" />
+    <Compile Include="Dtos\PickList\SizeUnitsDto.cs" />
+    <Compile Include="Dtos\Project\SolutionLimitsDto.cs" />
+    <Compile Include="Dtos\Project\SolutionRequestDto.cs" />
+    <Compile Include="Dtos\Project\SearchProjectRequestDto.cs" />
+    <Compile Include="Dtos\Project\ProjectSolutionDto.cs" />
+    <Compile Include="Dtos\Project\SolutionHeaderDetailsInProjectDto.cs" />
+    <Compile Include="Dtos\Project\SolutionResponseDto.cs" />
+    <Compile Include="Dtos\Project\SolutionSummaryDto.cs" />
+    <Compile Include="Dtos\PickList\StatePickListDto.cs" />
+    <Compile Include="Dtos\Loads\UPSLoadDto.cs" />
+    <Compile Include="Dtos\PickList\UPSLoadPickListDto.cs" />
+    <Compile Include="Dtos\Project\UserDefaultSolutionSetupDto.cs" />
+    <Compile Include="Dtos\UserRegisterDto.cs" />
+    <Compile Include="Dtos\PickList\UserRegisterPickListDto.cs" />
+    <Compile Include="Dtos\PickList\VoltageNominalDto.cs" />
+    <Compile Include="Dtos\PickList\VoltageSpecificDto.cs" />
+    <Compile Include="Dtos\Loads\WelderLoadDto.cs" />
+    <Compile Include="Dtos\PickList\WelderLoadPickListDto.cs" />
+    <Compile Include="Interface\Admin\IAdmin.cs" />
+    <Compile Include="Interface\Admin\IAdminLoad.cs" />
+    <Compile Include="Interface\IGeneratorAlternator.cs" />
+    <Compile Include="Interface\IPDF.cs" />
+    <Compile Include="Interface\IPickList.cs" />
+    <Compile Include="Interface\IProject.cs" />
+    <Compile Include="Interface\IProjectSolution.cs" />
+    <Compile Include="Interface\ISolutionLoad.cs" />
+    <Compile Include="Interface\ISolutionSummary.cs" />
+    <Compile Include="Interface\ITraceMessage.cs" />
+    <Compile Include="Interface\IUser.cs" />
+    <Compile Include="Interface\IUserDashboard.cs" />
+    <Compile Include="Mapper\FromDto\AddProjectDtoToProjectEntityMapper.cs" />
+    <Compile Include="Mapper\FromDto\SolutionRequestDtoToSolutionEntityMapper.cs" />
+    <Compile Include="Mapper\ToDto\ProjectEntityToProjectDetailDtoMapper.cs" />
+    <Compile Include="Mapper\ToDto\SolutionEntityToSolutionHeaderDetailsDtoMapper.cs" />
+    <Compile Include="Processors\Admin\AdminLoadProcessor.cs" />
+    <Compile Include="Processors\Admin\AdminProcessor.cs" />
+    <Compile Include="Processors\GeneratorAlternatorProcessor.cs" />
+    <Compile Include="Processors\PDFProcessor.cs" />
+    <Compile Include="Processors\PickListProcessor.cs" />
+    <Compile Include="Processors\ProjectProcessor.cs" />
+    <Compile Include="Processors\ProjectSolutionProcessor.cs" />
+    <Compile Include="Processors\SolutionLoadProcessor.cs" />
+    <Compile Include="Processors\SolutionSummaryProcessor.cs" />
+    <Compile Include="Processors\TraceMessageProcessor.cs" />
+    <Compile Include="Processors\UserDashboardProcessor.cs" />
+    <Compile Include="Processors\UserProcessor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PowerDesignPro.Common\PowerDesignPro.Common.csproj">
+      <Project>{626c80d6-cbe1-4439-86c7-e70dc9f8bb74}</Project>
+      <Name>PowerDesignPro.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PowerDesignPro.Data\PowerDesignPro.Data.csproj">
+      <Project>{64566cc7-2aa3-4874-9d68-7db84c5d5a5d}</Project>
+      <Name>PowerDesignPro.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReportTemplates\ProjectView.xsl" />
+    <Content Include="_binaries\Aspose.Pdf.dll" />
+    <Content Include="_binaries\Aspose.Words.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

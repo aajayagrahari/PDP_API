@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Messages>
+  <Module category="ProjectDashboard">
+    <Validation code="ProjectNotFound">
+      <Message>No Project Found for current user.</Message>
+    </Validation>
+      <Validation code="ShareProjectNotFound">
+      <Message>No Share Project Found for current user.</Message>
+    </Validation>
+    <Validation code="ProjectNameExist">
+      <Message>Project Name was used already.</Message>
+    </Validation>
+    <Validation code="NameFieldRequired">
+      <Message>Project Name is required.</Message>
+    </Validation>
+  </Module>
+  <Module category="UserAccount">
+    <Validation code="UserRegisteredSuccess">
+      <Message>User registered successfully.</Message>
+    </Validation>
+    <Validation code="UserRegisteredError">
+      <Message>Missing data required for registration.</Message>
+    </Validation>
+   <Validation code="AccountUpdateSuccess">
+      <Message>Account update successfully.</Message>
+    </Validation>
+    <Validation code="AccountUpdateError">
+      <Message>Missing data required for update account.</Message>
+    </Validation>
+  </Module>
+  <Module category="ProjectSolution">
+    <Validation code="SolutionNotFound">
+      <Message>No Solution Found for current project.</Message>
+    </Validation>
+    <Validation code="SolutionNameExist">
+      <Message>Solution Name was used already.</Message>
+    </Validation>
+    <Validation code="NameFieldRequired">
+      <Message>Solution Name is required.</Message>
+    </Validation>
+  </Module>
+  <Module category="SolutionLoad">
+    <Validation code="LoadFamilyNotFound">
+      <Message>No Load Family Found</Message>
+    </Validation>
+    <Validation code="LoadNotFound">
+      <Message>No Load Found for current Load family.</Message>
+    </Validation>
+    <Validation code="BasicLoadNotFound">
+      <Message>Basic Load not found for the Solution.</Message>
+    </Validation>
+    <Validation code="ACLoadNotFound">
+      <Message>AC Load not found for the Solution.</Message>
+    </Validation>
+    <Validation code="LightingLoadNotFound">
+      <Message>Lighting Load not found for the Solution.</Message>
+    </Validation>
+    <Validation code="UpsLoadNotFound">
+      <Message>UPS Load not found for the Solution.</Message>
+    </Validation>
+    <Validation code="WelderLoadNotFound">
+      <Message>Welder Load not found for the Solution.</Message>
+    </Validation>
+    <Validation code="MotorLoadNotFound">
+      <Message>Motor Load not found for the Solution.</Message>
+    </Validation>
+  </Module>
+ <Module category="Admin">
+    <Validation code="GeneratorNotFound">
+      <Message>No Generator Found</Message>
+    </Validation>
+   <Validation code="AlternatorNotFound">
+     <Message>No Alternator Found</Message>
+   </Validation>
+  <Validation code="LoadNotFound">
+     <Message>Load Not Found</Message>
+   </Validation>
+   <Validation code="MaintainMarketVerticalNotFound">
+     <Message>Maintain Market Vertical Not Found</Message>
+   </Validation>
+   <Validation code="HarmonicDeviceNotFound">
+     <Message>Harmonic Device Type Not Found</Message>
+   </Validation>
+  </Module>
+  <Module category="Report">
+    <Validation code="GasPipingNotFound">
+      <Message>No Gas Piping Solution Found for current Solution.</Message>
+    </Validation>
+    <Validation code="ExhaustPipingNotFound">
+      <Message>No Exhaust Piping Solution Found for current Solution.</Message>
+    </Validation>
+  </Module>
+</Messages>
